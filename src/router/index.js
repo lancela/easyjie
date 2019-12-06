@@ -12,14 +12,19 @@ export const constantRoutes = [
         component: () => import('@/views/404')
     },
     {
-      path: '/login', // 默认页面重定向到主页
+      path: '/', // 默认页面重定向到主页
       // name: 'Home',
        component: () => import('@/views/login/index'),
     },
+	{
+	  path: '/index', // 默认页面重定向到主页
+	  // name: 'Home',
+	   component: () => import('@/views/index/index'),
+	},
     {
       path: '/', // 默认页面重定向到主页
       // name: 'Home',
-      redirect:'/home',
+      redirect:'/login',
     },{
       path:'/home', //主路由
       component: () => import('@/layout/index'),
