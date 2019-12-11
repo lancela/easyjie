@@ -1,23 +1,23 @@
 <template>
   <div class="login-container">
-     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+     <el-form id="login-form" ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="title-container">
         <h2 class="title">Login Form</h2>
       </div>
       <el-form-item prop="username">
-        <el-input 
+        <el-input
           type="text"
           ref="username"
           name="username"
-          placeholder="Username" 
-          prefix-icon="el-icon-user" 
-          v-model="loginForm.username" 
+          placeholder="Username"
+          prefix-icon="el-icon-user"
+          v-model="loginForm.username"
           tabindex="1"
           auto-complete="on"/>
       </el-form-item>
       <el-form-item prop="password">
-        <el-input 
-          prefix-icon="el-icon-key"  
+        <el-input
+          prefix-icon="el-icon-key"
           :key="passwordType"
           ref="password"
           v-model="loginForm.password"
@@ -43,6 +43,7 @@
 <script>
 // 获取校验正则表达式
 import { validUsername } from '@/utils/validate'
+import $ from 'jquery'
 export default {
   name: 'Login',
   data () {
@@ -55,8 +56,8 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+      if (value.length < 5) {
+        callback(new Error('The password can not be less than 5 digits'))
       } else {
         callback()
       }
@@ -75,6 +76,9 @@ export default {
       passwordType: 'password',
       redirect: undefined
     }
+  },
+  mounted(){
+   $('#login-form').addClass('animated bounceInRight')
   },
   watch:{
     $route: {
@@ -136,4 +140,3 @@ export default {
   }
 }
 </style>
-

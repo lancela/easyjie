@@ -4,7 +4,7 @@
     <div class="title">
       <span>{{msg}}</span>
     </div>
-    <div class="content">
+    <div id="content" class="content">
       <div class="introduce">
         <span>易捷家政，让你省心、放心、安心</span>
         <span>详细的介绍</span>
@@ -16,7 +16,7 @@
           </router-link>
         </el-button>
       </div>
-      <div class="link">
+      <div class="link animated swing infinite">
         <span>友情合作</span>
         <div class="to" >
           <div v-on:click="tourl(item.url)" class="item" v-for="item in cooperation">
@@ -28,12 +28,12 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+    <div  class="footer "></div>
   </div>
 </template>
 
 <script>
-
+  import $ from 'jquery'
 export default {
   name: 'index',
   data(){
@@ -62,14 +62,25 @@ export default {
   computed: {
 
   },
+ mounted(){
+  $('#content').addClass('animated bounceInUp')
+ },
   methods:{
     tourl(e){
       window.location.href = e;
+    },
+    addclass(param){
+      console.log(param)
     }
   }
 }
 </script>
-
+<style>
+  .link{
+   animation-duration: 5s;
+   animation-delay: 2s;
+ }
+</style>
 <style scoped="" lang="scss">
   .page{
     height: 100%;

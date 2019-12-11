@@ -7,7 +7,9 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './styles/animate.css'
+import './styles/golbal.scss'
 Vue.config.productionTip = false
+
 
 
 Vue.use(ElementUI)
