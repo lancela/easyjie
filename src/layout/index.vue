@@ -17,31 +17,48 @@
         router
         :default-active="activePath"
       >
-    
-        <el-submenu index="/home">
+        <el-menu-item index="/dishboard">
+          <i class="el-icon-s-grid"></i><span>Dishboard</span>
+        </el-menu-item>
+        <el-submenu index="/expamle" to="/expamle">
           <template slot="title">
-            <i style="marginLeft:-20px" class="el-icon-message"></i><span>导航一</span>
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-message"></i>
+            <span>Example</span>
           </template>
-          <el-menu-item index="/home/table">
-            <i class="el-icon-s-grid"></i>Table
+          <el-menu-item index="/example/table">
+            <i class="el-icon-s-grid"></i><span>Table</span>
           </el-menu-item>
-          <el-menu-item index="/home/form">
-            <i class="el-icon-copy-document"></i><span>Form</span>
+          <el-menu-item index="/example/form">
+            <i class="el-icon-copy-document"></i>
+            <span>Form</span>
           </el-menu-item>
         </el-submenu>
-        <el-submenu index="2">
+        <el-submenu index="/execl" to="/execl">
           <template slot="title">
-            <i style="marginLeft:-20px" class="el-icon-menu"></i><span>导航二</span>
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-menu"></i>
+            <span>Excel</span>
           </template>
-          <el-menu-item index="2-1"><span>选项1</span></el-menu-item>
-          <el-menu-item index="2-2"><span>选项2</span></el-menu-item>
-          <el-menu-item index="2-3"><span>选项3</span></el-menu-item>
+          <el-menu-item index="/execl/export-excel">
+            <span>Export Excel</span>
+          </el-menu-item>
+          <el-menu-item index="/execl/export-select-excel">
+            <span>Export Selected</span>
+          </el-menu-item>
+          <el-menu-item index="/execl/export-merge-header">
+            <span>Export Header</span>
+          </el-menu-item>
+          <el-menu-item index="/execl/upload-excel">
+            <span>Upload Export</span>
+          </el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">
-          <i style="marginLeft:-20px" class="el-icon-setting"></i><span>导航三</span>
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-setting"></i>
+            <span>导航三</span>
           </template>
-          <el-menu-item index="3-1"><span>选项1</span></el-menu-item>
+          <el-menu-item index="3-1">
+            <span>选项1</span>
+          </el-menu-item>
         </el-submenu>
       </el-menu>
     </el-aside>
@@ -75,7 +92,7 @@
               <a href>github</a>
             </el-dropdown-item>
             <el-dropdown-item class="el-dropdown-item">
-              <router-link to="/login">注销</router-link>
+              <router-link to="/">注销</router-link>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -118,7 +135,6 @@ export default {
 .el-aside {
   background-color: #333744;
   color: #333;
-  text-align: center;
   overflow-x: hidden;
   height: 100%;
   font-size: 20px;

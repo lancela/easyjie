@@ -11,7 +11,7 @@
       </div>
       <div class="jump">
         <el-button type="primary" style="width: 160px;height: 60px;">
-          <router-link to="/home" style="text-decoration: none;">
+          <router-link to="/dishboard" style="text-decoration: none;">
             <span style="font-size: 30px;color: #000000;">开始使用</span>
           </router-link>
         </el-button>

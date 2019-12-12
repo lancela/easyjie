@@ -7,46 +7,86 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export const constantRoutes = [
-    {
-        path: '*',
-        component: () => import('@/views/404')
-    },
-    {
-      path: '/', // 默认页面重定向到主页
-      // name: 'Home',
-       component: () => import('@/views/login/index'),
-    },
-	{
-	  path: '/index', // 默认页面重定向到主页
-	  // name: 'Home',
-	   component: () => import('@/views/index/index'),
-	},
-    {
-      path: '/', // 默认页面重定向到主页
-      // name: 'Home',
-      redirect:'/login',
-    },{
-      path:'/home', //主路由
-      component: () => import('@/layout/index'),
-      children:[ // 嵌套子路由
-        {
-          path:'table',
-          name:'one', // 路由名称
-          component: () => import('@/views/Table'),
-        },
-        {
-          path:'form',
-          component: () => import('@/views/Form'),
-        }
-      ]
-    }
-  ]
+  // 不存在的路由
+  {
+    path: '*',
+    component: () => import('@/views/404')
+  },
+  // 跟路由重定向
+  {
+    path: '/', // 默认页面重定向到主页
+    // name: 'Home',
+    component: () => import('@/views/login/index'),
+  },
+  // 主页路由
+  {
+    path: '/index', // 默认页面重定向到主页
+    // name: 'Home',
+    component: () => import('@/views/index/index'),
+  },
+  {
+    path: '/dishboard', //主路由
+    component: () => import('@/layout/index'),
+    redirect: '/dishboard/index',
+    children: [ // 嵌套子路由
+      {
+        path: '/dishboard/index',
+        name: 'dishboard', // 路由名称
+        component: () => import('@/views/Dishboard'),
+      }
+    ]
+  },
+  {
+    path: '/example', //主路由
+    component: () => import('@/layout/index'),
+    redirect: '/example/table',
+    children: [ // 嵌套子路由
 
+      {
+        path: 'table',
+        name: 'table', // 路由名称
+        component: () => import('@/views/Table'),
+      },
+      {
+        path: 'form',
+        component: () => import('@/views/Form'),
+      }
+    ]
 
+  },
+  {
+    path: '/execl', //主路由
+    component: () => import('@/layout/index'),
+    redirect: '/execl/export-excel',
+    children: [ // 嵌套子路由
+      {
+        path: 'export-excel',
+        name: 'export-excel', // 路由名称
+        component: () => import('@/views/execl/ExportExcel'),
+      },
+      {
+        path: 'export-select-excel',
+        component: () => import('@/views/execl/ExportSelectExcel'),
+      },
+      {
+        path: 'export-merge-header',
+        name: 'export-merge-header', // 路由名称
+        component: () => import('@/views/execl/ExportMergeHeader'),
+      },
+      {
+        path: 'upload-excel',
+        component: () => import('@/views/execl/UploadExcel'),
+      }
+    ]
+
+  }
+]
 
 
 const createRouter = () => new Router({
-  scrollBehavior:() => ({y:0}),
+  scrollBehavior: () => ({
+    y: 0
+  }),
   routes: constantRoutes
 })
 
