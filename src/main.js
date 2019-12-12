@@ -10,10 +10,14 @@ import './styles/animate.css'
 import './styles/golbal.scss'
 import axios from 'axios'
 import request from './utils/request'
+import * as filters from './filters' // 全局的filters
 Vue.prototype.$http = request;
 Vue.config.productionTip = false
 
-
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.use(ElementUI)
 /* eslint-disable no-new */
