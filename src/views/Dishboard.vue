@@ -11,7 +11,19 @@
 </template>
 
 <script>
-export default {};
+  import { fetchList } from '@/api/address-controller'
+export default {
+  created(){
+    // this.getdata()
+  },
+  methods:{
+    getdata(){
+     fetchList().then(response => {
+         console.log(response)
+        })
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

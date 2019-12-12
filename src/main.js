@@ -8,6 +8,9 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './styles/animate.css'
 import './styles/golbal.scss'
+import axios from 'axios'
+import request from './utils/request'
+Vue.prototype.$http = request;
 Vue.config.productionTip = false
 
 
