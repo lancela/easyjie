@@ -15,7 +15,6 @@
         unique-opened
         :collapse="isCollapse"
         router
-        :default-active="activePath"
       >
         <el-menu-item index="/dishboard">
           <i class="el-icon-s-grid"></i><span>Dishboard</span>
@@ -83,7 +82,7 @@
             src="@/assets/image/gif1.gif"
             style="width: 40px; height: 40px;border-radius: 20%; margin-top:10px"
           />
-          <icon class="el-icon-caret-bottom" style="font-size: 18px;margin-left: 8px;"></icon>
+          <i class="el-icon-caret-bottom" style="font-size: 18px;margin-left: 8px;"></i>
           <el-dropdown-menu slot="dropdown" class="menu">
             <el-dropdown-item class="el-dropdown-item">
               <a href>我的</a>
