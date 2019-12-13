@@ -121,7 +121,7 @@
           <!-- 下把的数据展示 -->
           <div>
             <el-progress color="#c00" :percentage="50"></el-progress>
-            <el-progress :percentage="80" ></el-progress>
+            <el-progress :percentage="80"></el-progress>
             <el-progress :percentage="100" status="warning"></el-progress>
             <el-progress :percentage="20" status="exception"></el-progress>
           </div>
@@ -2683,13 +2683,29 @@ export default {
   height: 200px;
   background-color: #34bfa3;
   overflow: hidden;
-  img{
+  img {
     height: 100%;
-    width:100%;
+    width: 100%;
   }
-  img :hover{
-    height: 200%;
-    width: 200%;
+  img:hover {
+    animation: mymove 1s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes mymove {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+@keyframes circledown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
   }
 }
 .circlePa {
