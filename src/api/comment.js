@@ -5,9 +5,3 @@ export function fetchList() {
     method: 'get',
   })
 }
-export function fetchList() {
-  return request({
-    url: '/address/findAll',
-    method: 'get',
-  })
-}

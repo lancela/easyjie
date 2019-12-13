@@ -23,9 +23,10 @@ export function fetchList(query) {
      },
 */
 
-export function fetchList() {
+export function addressList() {
   return request({
     url: '/address/findAll',
     method: 'get',
   })
 }
+
