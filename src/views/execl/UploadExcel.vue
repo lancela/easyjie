@@ -1,12 +1,10 @@
-
-
 <template>
   <div>
     <!-- 面包屑导航 -->
     <el-card shadow="always">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/execl/export-excel' }">execl</el-breadcrumb-item>
-        <el-breadcrumb-item>upload-export</el-breadcrumb-item>
+        <el-breadcrumb-item>Upload Export</el-breadcrumb-item>
       </el-breadcrumb>
     </el-card>
     <!-- 主体视图区 -->
