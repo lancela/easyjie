@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import { fetchList } from '@/api/address-controller'
+  import { addressList } from '@/api/address'
 export default {
   created(){
     // this.getdata()

@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { addressList } from '@/api/comment'
+import { addressList } from '@/api/address'
 
 export default {
   name: 'export-select-excel',

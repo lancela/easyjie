@@ -1,7 +1,8 @@
 import request from '@/utils/request'
-export function fetchList() {
+
+export function addressList() {
   return request({
-    url: '/comment/findAll',
+    url: '/address/findAll',
     method: 'get',
   })
 }
