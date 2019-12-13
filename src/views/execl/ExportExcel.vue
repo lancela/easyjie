@@ -73,7 +73,8 @@
 </template>
 
 <script>
-import { addressList } from "@/api/address";
+
+import { addressList } from "@/api/address-controller";
 import { parseTime } from "@/utils";
 import FilenameOption from './components/FilenameOption'
 import AutoWidthOption from './components/AutoWidthOption'

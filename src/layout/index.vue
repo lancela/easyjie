@@ -96,8 +96,12 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-header>
-
-      <router-view />
+      <transition name="fade-transform" mode="out-in">
+      <keep-alive>
+         <router-view />
+      </keep-alive>
+    </transition>
+     
     </el-container>
   </el-container>
 </template>
@@ -115,7 +119,7 @@ export default {
     toggleCollapse() {
       this.isCollapse = !this.isCollapse;
     }
-  }
+  },
 };
 </script>
 
