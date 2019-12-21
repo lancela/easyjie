@@ -93,16 +93,14 @@ export default {
       bookType: 'xlsx'
     }
   },
-   created() {
+  created() {
     this.fetchData()
   },
   methods: {
     fetchData() {
       this.listLoading = true
       addressList(this.listQuery).then(response => {
-        console.log(response);
-        // this.list = response.data.items
-        // this.listLoading = false
+        // console.log(response);
         this.list = response;
         this.listLoading = false;
       })

@@ -78,7 +78,32 @@ export const constantRoutes = [
         component: () => import('@/views/execl/UploadExcel'),
       }
     ]
-
+  },
+  {
+    path: '/table', //主路由
+    component: () => import('@/layout/index'),
+    redirect: '/table/dynamic-tables',
+    children: [ // 嵌套子路由
+      {
+        path: 'dynamic-table',
+        name: 'dynamic-table', // 路由名称
+        component: () => import('@/views/table/dynamic-table'),
+      },
+      {
+        path: 'darg-table',
+        // name: 'darg-table',
+        component: () => import('@/views/table/darg-table'),
+      },
+      {
+        path: 'inline-edit',
+        // name: 'inline-edit', // 路由名称
+        component: () => import('@/views/table/inline-edit'),
+      },
+      {
+        path: 'complex-table',
+        component: () => import('@/views/table/complex-table'),
+      }
+    ]
   }
 ]
 

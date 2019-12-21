@@ -73,7 +73,7 @@ export default {
     fetchData() {
       this.listLoading = true;
       fetchList(this.listQuery).then(response => {
-        console.log(response);
+        // console.log(response);
         this.list = response;
         this.listLoading = false;
       });

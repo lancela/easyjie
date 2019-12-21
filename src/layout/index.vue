@@ -17,7 +17,7 @@
         router
       >
         <el-menu-item index="/dishboard">
-          <i class="el-icon-s-grid"></i><span>Dishboard</span>
+          <i class="el-icon-s-data"></i><span>Dishboard</span>
         </el-menu-item>
         <el-submenu index="/expamle" to="/expamle">
           <template slot="title">
@@ -34,7 +34,7 @@
         </el-submenu>
         <el-submenu index="/execl" to="/execl">
           <template slot="title">
-            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-menu"></i>
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-pie-chart"></i>
             <span>Excel</span>
           </template>
           <el-menu-item index="/execl/export-excel">
@@ -50,13 +50,22 @@
             <span>Upload Export</span>
           </el-menu-item>
         </el-submenu>
-        <el-submenu index="3">
+        <el-submenu index="/table" to="/table">
           <template slot="title">
-            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-setting"></i>
-            <span>导航三</span>
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-menu"></i>
+            <span>Table</span>
           </template>
-          <el-menu-item index="3-1">
-            <span>选项1</span>
+          <el-menu-item index="/table/dynamic-table">
+            <span>Dynamic Table</span>
+          </el-menu-item>
+          <el-menu-item index="/table/darg-table">
+            <span>Darg Table</span>
+          </el-menu-item>
+          <el-menu-item index="/table/inline-edit">
+            <span>Inline Edit</span>
+          </el-menu-item>
+          <el-menu-item index="/table/complex-table">
+            <span>Complex Table</span>
           </el-menu-item>
         </el-submenu>
       </el-menu>
@@ -96,12 +105,14 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-header>
-      <transition name="fade-transform" mode="out-in">
-      <keep-alive>
-         <router-view />
-      </keep-alive>
-    </transition>
-     
+      <el-scrollbar style="height:100%">
+        <transition name="fade-transform" mode="out-in">
+          <keep-alive>
+            <router-view />
+          </keep-alive>
+        </transition>
+      </el-scrollbar>
+      
     </el-container>
   </el-container>
 </template>
