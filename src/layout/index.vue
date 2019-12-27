@@ -1,7 +1,6 @@
-
 <template>
   <el-container>
-    <el-aside :width="isCollapse ? '70px' : '200px'" style="background-color: rgb(238, 241, 246)">
+    <el-aside :width="isCollapse ? '70px' : '200px'" style="margin:0;padding:0;background-color: rgb(238, 241, 246)">
       <!-- 侧边栏顶部的logo -->
       <el-header class="logo">
         <img src="../assets/logo.png" />
@@ -66,6 +65,21 @@
           </el-menu-item>
           <el-menu-item index="/table/complex-table">
             <span>Complex Table</span>
+          </el-menu-item>
+        </el-submenu>
+        <el-submenu index="/components" to="/components">
+          <template slot="title">
+            <i style="marginLeft:-20px marginLeft:20px" class="el-icon-s-grid"></i>
+            <span>Components</span>
+          </template>
+          <el-menu-item index="/components/tinymceDemo">
+            <span>Tinymce</span>
+          </el-menu-item>
+          <el-menu-item index="/components/markdown">
+            <span>Markdown</span>
+          </el-menu-item>
+          <el-menu-item index="/components/json-editor">
+            <span>JSON Editor</span>
           </el-menu-item>
         </el-submenu>
       </el-menu>

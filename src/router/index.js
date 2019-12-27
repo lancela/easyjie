@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-// import Layout from '@/layout'
+import Layout from '@/layout'
 
 Vue.use(Router)
 
@@ -26,7 +26,7 @@ export const constantRoutes = [
   },
   {
     path: '/dishboard', //主路由
-    component: () => import('@/layout/index'),
+    component: Layout,
     redirect: '/dishboard/index',
     children: [ // 嵌套子路由
       {
@@ -38,7 +38,7 @@ export const constantRoutes = [
   },
   {
     path: '/example', //主路由
-    component: () => import('@/layout/index'),
+    component: Layout,
     redirect: '/example/table',
     children: [ // 嵌套子路由
 
@@ -56,7 +56,7 @@ export const constantRoutes = [
   },
   {
     path: '/execl', //主路由
-    component: () => import('@/layout/index'),
+    component: Layout,
     redirect: '/execl/export-excel',
     children: [ // 嵌套子路由
       {
@@ -81,7 +81,7 @@ export const constantRoutes = [
   },
   {
     path: '/table', //主路由
-    component: () => import('@/layout/index'),
+    component: Layout,
     redirect: '/table/dynamic-tables',
     children: [ // 嵌套子路由
       {
@@ -104,6 +104,25 @@ export const constantRoutes = [
         component: () => import('@/views/table/complex-table'),
       }
     ]
+  },
+  {
+    path:'/components',
+    component:Layout,
+    redirect:'/components/tinymceDemo',
+    children:[
+      {
+        path: 'tinymceDemo',
+        component: () => import('@/views/components/tinymce.vue'),
+      },
+      {
+        path: 'markdown',
+        component: () => import('@/views/components/markdown.vue'),
+      },
+      {
+        path: 'json-editor',
+        component: () => import('@/views/components/jsonEditor.vue'),
+      }
+    ]
   }
 ]
 
@@ -118,9 +137,14 @@ const createRouter = () => new Router({
 const router = createRouter()
 export function resetRouter() {
   const newRouter = createRouter()
-
-
   router.matcher = newRouter.matcher // ？
 }
-
+$router.onError((error) => {
+  const pattern = /Loading chunk (\d)+ failed/g;
+  const isChunkLoadFailed = error.message.match(pattern);
+  if(isChunkLoadFailed){
+      location.reload();
+  }
+  
+});
 export default router
