@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-
     <div class="title">
       <span>{{msg}}</span>
     </div>
@@ -18,22 +17,19 @@
       </div>
       <div class="link animated swing infinite">
         <span>友情合作</span>
-        <div class="to" >
-          <div v-on:click="tourl(item.url)" class="item" v-for="item in cooperation">
+        <div class="to">
+          <div class="item" v-for="(item,i) in cooperation" :key="i" v-on:click="tourl(item.url)">
             <span>{{item.name}}</span>
-            <div class="img" style="">
-              <!-- <img :src="imgSrc" :alt="imgSrc"> -->
-            </div>
+            <div class="img" style=""></div>
           </div>
         </div>
       </div>
     </div>
-    <div  class="footer "></div>
   </div>
 </template>
 
 <script>
-  import $ from 'jquery'
+import $ from 'jquery'
 export default {
   name: 'index',
   data(){
@@ -146,8 +142,6 @@ export default {
           }
         }
       }
-
     }
-    .footer{}
   }
 </style>

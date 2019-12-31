@@ -112,15 +112,23 @@ export const constantRoutes = [
     children:[
       {
         path: 'tinymceDemo',
+        name: 'tinymceDemo',
         component: () => import('@/views/components/tinymce.vue'),
       },
       {
         path: 'markdown',
+        name: 'markdown',
         component: () => import('@/views/components/markdown.vue'),
       },
       {
         path: 'json-editor',
+        name: 'json-editor',
         component: () => import('@/views/components/jsonEditor.vue'),
+      },
+      {
+        path: 'dnd-list',
+        name: 'dnd-list',
+        component:()=>import('@/views/components/dndList.vue')
       }
     ]
   }
@@ -137,14 +145,9 @@ const createRouter = () => new Router({
 const router = createRouter()
 export function resetRouter() {
   const newRouter = createRouter()
+
+
   router.matcher = newRouter.matcher // ？
 }
-$router.onError((error) => {
-  const pattern = /Loading chunk (\d)+ failed/g;
-  const isChunkLoadFailed = error.message.match(pattern);
-  if(isChunkLoadFailed){
-      location.reload();
-  }
-  
-});
+
 export default router

@@ -81,6 +81,9 @@
           <el-menu-item index="/components/json-editor">
             <span>JSON Editor</span>
           </el-menu-item>
+          <el-menu-item index="/components/dnd-list">
+            <span>Dnd List</span>
+          </el-menu-item>
         </el-submenu>
       </el-menu>
     </el-aside>
