@@ -15,7 +15,7 @@
     "echarts": "^4.5.0",
     "element-ui": "^2.13.0",
     "file-saver": "^2.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jsonlint": "^1.6.3",
     "mockjs": "^1.1.0",
     "node-sass": "^4.13.0",
