@@ -19,7 +19,7 @@
     "jsonlint": "^1.6.3",
     "mockjs": "^1.1.0",
     "node-sass": "^4.13.0",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "script-loader": "^0.7.2",
     "sortablejs": "^1.10.1",
     "tui-editor": "^1.4.10",
